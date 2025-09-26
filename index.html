@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suryansh Singh | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome Free CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="logo">Suryansh Singh</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- Hero Section -->
+<section id="hero" class="card hero-section">
+  <div class="hero-content">
+    <h1>Hi, I'm <span class="highlight">Suryansh Singh</span></h1>
+    <p class="typing-text">Python | Java | SQL | C | HTML | CSS</p>
+  </div>
+  <div class="hero-image">
+    <img src="photo.JPG" alt="Suryansh Singh">
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="card about-section">
+  <h2>About Me</h2>
+  <div class="about-content">
+    <p>
+      Hello! I'm <span class="highlight">Suryansh Singh</span>, a passionate 
+      developer with a strong interest in building impactful software solutions. 
+      I enjoy solving real-world problems through code and have hands-on 
+      experience in both <b>frontend and backend development</b>. 
+    </p>
+    <p>
+      Over the years, I’ve worked on academic and personal projects ranging 
+      from <b>web development</b> to <b>AI-powered systems</b>, which has 
+      helped me gain expertise in multiple programming languages and frameworks.
+    </p>
+
+    <h3>Highlights:</h3>
+    <ul class="about-list">
+      <li>💡 Skilled in <b>Python, Java, SQL, C, HTML, CSS</b></li>
+      <li>🌍 Developed <b>BLW Tourism Website</b> for employee travel solutions</li>
+      <li>🤖 Created <b>PashuLens</b> – an AI-based breed recognition system</li>
+      <li>📚 Strong foundation in <b>Data Structures & Algorithms</b></li>
+      <li>🚀 Passionate about <b>learning new technologies</b> and applying them</li>
+    </ul>
+
+    <p>
+      I’m always open to exploring new opportunities, collaborating on projects, 
+      and contributing to impactful tech communities.
+    </p>
+    <a href="Resume.pdf" download="Suryansh_Singh_Resume.pdf" class="resume-btn">
+    📄 Download Resume
+    </a>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="card skills-section">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    
+    <div class="skill">
+      <span>Python</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 90%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>Java</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 80%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>SQL</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 75%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>C</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 70%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>HTML</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 85%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>CSS</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 80%"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="card">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>BLW Tourism Website</h3>
+      <p>A tourism platform designed for BLW employees to explore and book tourism packages.</p>
+      <a href="https://github.com/suryansh700/BLW-Tourism-Website" target="_blank" class="project-link">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>PashuLens</h3>
+      <p>An image-based breed recognition system for buffaloes and cattle, leveraging AI for accurate classification.</p>
+      <a href="https://github.com/suryansh700/PashuLens" target="_blank" class="project-link">View Project</a>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/suryansh-singh-028a202b9" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/suryansh700" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/surya_nshsingh23/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2025 Suryansh Singh. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Typing Animation
+    const skills = ["Python", "Java", "SQL", "C", "HTML", "CSS"];
+    let skillIndex = 0, charIndex = 0, isDeleting = false;
+    const typingElement = document.querySelector(".typing");
+
+    function type() {
+      const word = skills[skillIndex];
+      typingElement.textContent = word.substring(0, charIndex) + (isDeleting ? "" : "|");
+
+      if (!isDeleting && charIndex < word.length) {
+        charIndex++;
+        setTimeout(type, 150);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(type, 100);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) skillIndex = (skillIndex + 1) % skills.length;
+        setTimeout(type, 800);
+      }
+    }
+    type();
+  </script>
+</body>
+
+</html>
